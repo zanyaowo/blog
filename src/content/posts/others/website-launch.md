@@ -3,7 +3,7 @@ title: 網站開幕
 published: 2026-03-29
 description: "歡迎來到我的部落格！"
 pinned: true
-tags: []
+tags: [Others]
 category: Others
 draft: false
 ---
