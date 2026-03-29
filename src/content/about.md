@@ -1,23 +1,45 @@
-# About This Site
+# 關於我
 
-Twilight is a CMS integrated static blog template built with [Astro](https://astro.build) framework.
+嗨，我是 **你的名字**，一個熱愛寫作與技術的人。
+這裡是我記錄生活、分享想法的地方。
 
-::github{repo="Spr-Aachen/Twilight"}
+## 關於這個部落格
 
+這個部落格用來分享：
 
-## Milestones
+- 技術筆記與學習心得
+- 生活日常與隨筆
+- 有趣的專案與作品
 
-- Integrated content management system in [#1](https://github.com/Spr-Aachen/Twilight/pull/1)
-- Seamless wallpaper mode switching in [#2](https://github.com/Spr-Aachen/Twilight/pull/2)
-- Dynamic content container response in [#47](https://github.com/Spr-Aachen/Twilight/pull/47)
-- Seamless page component loading in [#48](https://github.com/Spr-Aachen/Twilight/pull/48)
-- Smart music playback handling in [#49](https://github.com/Spr-Aachen/Twilight/pull/49)
-- Infinite-level navigation system in [#50](https://github.com/Spr-Aachen/Twilight/pull/50)
-- Comprehensive statistics dashboard in [#51](https://github.com/Spr-Aachen/Twilight/pull/51)
-- Low-barrier configuration scheme in [#58](https://github.com/Spr-Aachen/Twilight/pull/58)
-- Dynamic breakpoint handling in [#68](https://github.com/Spr-Aachen/Twilight/pull/68)
-- Advanced content management in [#73](https://github.com/Spr-Aachen/Twilight/pull/73)
-- Nested category support in [#74](https://github.com/Spr-Aachen/Twilight/pull/74)
-- Comprehensive music card plugin in [#81](https://github.com/Spr-Aachen/Twilight/pull/81)
-- Refactored DecapCMS OAuth integration in [#107](https://github.com/Spr-Aachen/Twilight/pull/107)
-- Non-breaking PagesCMS support in [#114](https://github.com/Spr-Aachen/Twilight/pull/114)
+## 技能
+
+**軟體工程**
+
+| 領域 | 技術 |
+|------|------|
+| 程式語言 | Rust、C++ |
+| 工具 | Git、Docker |
+| 研究 | 作業系統 |
+
+**資訊安全**
+
+| 領域 | 技術 |
+|------|------|
+| 方向 | 滲透測試、CTF、漏洞分析 |
+
+**其他**
+
+| 領域 | 項目 |
+|------|------|
+| 心理學 | — |
+| 學習方法 | — |
+| 語言 | 中文 |
+
+## 聯絡我
+
+如果你有任何問題或想法，歡迎透過以下方式聯絡：
+
+- **GitHub**：[你的帳號](https://github.com/你的帳號)
+- **Email**：tswnhh15h@mozmail.com
+
+> 感謝你的到來，希望這裡的內容對你有所幫助。

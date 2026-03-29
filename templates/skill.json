@@ -1,0 +1,19 @@
+{
+    "name": "技能名稱（例如：Rust）",
+    "description": "技能的簡短描述（例如：一門注重安全與效能的系統程式語言）",
+    "icon": "圖示名稱，從 https://icon-sets.iconify.design/ 搜尋（例如：logos:rust）",
+    "category": "技能分類，可選值：ai / backend / client / frontend / database / engines / tools / others",
+    "level": "熟練程度，可選值：beginner / intermediate / advanced / expert",
+    "experience": {
+        "years": 0,
+        "months": 6
+    },
+    "projects": [
+        "關聯的專案名稱（對應 src/content/projects/ 裡的項目標題）",
+        "可填多個"
+    ],
+    "certifications": [
+        "相關證照或認證名稱（選填）"
+    ],
+    "color": "#十六進位色碼，用於卡片顯示（例如：#DEA584）"
+}

@@ -1,0 +1,7 @@
+{
+    "title": "友站名稱（例如：某人的部落格）",
+    "imgurl": "頭像圖片網址（例如：https://example.com/avatar.png）",
+    "desc": "友站的簡短描述（例如：分享技術與生活的個人部落格）",
+    "siteurl": "友站網址（例如：https://example.com）",
+    "tags": ["分類標籤，可填多個，例如：Blog、Tools、Design"]
+}

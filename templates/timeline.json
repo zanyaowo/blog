@@ -1,0 +1,27 @@
+{
+    "title": "事件標題（例如：進入某大學資訊工程系）",
+    "description": "事件的詳細描述，說明這個時間點發生了什麼",
+    "type": "事件類型，可選值：education（學歷）/ work（工作）/ project（專案）/ achievement（成就）",
+    "startDate": "開始日期，格式：YYYY-MM-DD（例如：2022-09-01）",
+    "endDate": "結束日期，格式：YYYY-MM-DD（選填，至今則留空 \"\"）",
+    "location": "地點（選填，例如：台北市）",
+    "organization": "機構或公司名稱（選填，例如：某某大學）",
+    "position": "職稱或身份（選填，例如：資訊安全研究員）",
+    "skills": [
+        "此期間使用或學習的技能（選填，例如：Rust）",
+        "可填多個"
+    ],
+    "achievements": [
+        "具體成就（選填，例如：CTF 競賽第一名）",
+        "可填多個"
+    ],
+    "links": [
+        {
+            "name": "連結名稱（例如：相關證書）",
+            "url": "https://example.com",
+            "type": "連結類型，可選值：certificate / project / other"
+        }
+    ],
+    "icon": "圖示名稱（選填，從 https://icon-sets.iconify.design/ 搜尋，例如：material-symbols:school）",
+    "color": "卡片顏色（選填，十六進位色碼，例如：#7C3AED）"
+}

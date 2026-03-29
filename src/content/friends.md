@@ -2,7 +2,7 @@
 
 ## How to Apply
 
-Please send your website information to: xxx@xxx.com
+Please send your website information to: tswnhh15h@mozmail.com
 
 Email Subject:
 ```
