@@ -258,7 +258,7 @@ profile:
     # 头像配置 (相对于 /public 目录)
     avatar: "/assets/images/avatar.jpg"
     # 信息配置
-    name: "Twilight"
+    name: "Zanya"
     # 简介配置
     bio: "Hi"
     # 链接配置
@@ -269,7 +269,7 @@ profile:
             # 图标
             icon: "fa6-brands:github"
             # 链接
-            url: "https://github.com/Spr-Aachen/Twilight"
+            url: "https://github.com/zanyaowo"
 
 # 公告配置
 announcement:
