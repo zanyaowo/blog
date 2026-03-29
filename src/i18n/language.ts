@@ -25,6 +25,12 @@ export const LANGUAGE_CONFIG = {
         locale: "zh-CN",
         icon: "🇨🇳",
     },
+    zh_tw: {
+        translateCode: "chinese_traditional",
+        displayName: "繁體中文",
+        locale: "zh-TW",
+        icon: "🇹🇼",
+    },
     en: {
         translateCode: "english",
         displayName: "English",
