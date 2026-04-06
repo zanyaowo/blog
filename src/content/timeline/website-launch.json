@@ -1,16 +1,16 @@
 {
-    "title": "建立個人部落格",
-    "description": "建立這個部落格，開始記錄資訊安全、系統程式設計與學習心得。",
-    "type": "project",
-    "startDate": "2026-03-29",
-    "endDate": "",
-    "links": [
-        {
-            "name": "部落格",
-            "url": "/",
-            "type": "project"
-        }
-    ],
-    "icon": "material-symbols:article",
-    "color": "#7C3AED"
+  "title": "建立個人部落格",
+  "description": "建立這個部落格，開始記錄資訊安全、系統程式設計與學習心得。",
+  "type": "project",
+  "startDate": "2026-03-29",
+  "endDate": "",
+  "links": [
+    {
+      "name": "部落格",
+      "url": "/",
+      "type": "project"
+    }
+  ],
+  "icon": "material-symbols:article",
+  "color": "#7C3AED"
 }
