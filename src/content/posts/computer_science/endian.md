@@ -10,7 +10,7 @@ draft: false
 
 ## 什麼是 Endianness
 
-Endianness 是指位元組排列的順序由CPU架構決定，其中探討的問題在於記憶體是一個線性一維陣列，每個單元存放一個 byte，每個 byte 有自己唯一的存放位置。當一個 word 存入時該如何決定放入資料的順序 [2]。
+Endianness 是指位元組排列的順序由 ISA（Instruction Set Architecture，指令集架構）決定，其中探討的問題在於記憶體是一個線性一維陣列，每個單元存放一個 byte，每個 byte 有自己唯一的存放位置。當一個 word 存入時該如何決定放入資料的順序 [2]。
 Endianness 有兩種形式，Big Endian 和 Little Endian。
 
 - Big Endian：將資料的 MSB 存放在低位址，LSB 存放在高位址的方法，這種存放方式能很輕易的就看出原本存放了什麼資料。
@@ -81,7 +81,7 @@ Big-Endian：進行大小比對或者是字串排序時，邏輯直觀且有效�
 
 不過發展至今日效能差距基本可以忽略，更多定義的是統一定義標準避免不同系統解讀資料錯誤，比如網路傳輸。
 
-值得一提的是，**ARM** 架構支援 **Bi-Endian**，可以在開機或執行時透過 `SETEND` 指令切換 endianness，這讓它在嵌入式與行動裝置上有更高的彈性。RISC-V 同樣支援 bi-endian。
+值得一提的是，**ARM** 架構支援 **Bi-Endian**。在 ARMv7 以前可透過 `SETEND` 指令切換 endianness；ARMv8（AArch64）則移除了 `SETEND`，改由系統暫存器（如 `SCTLR_EL1.EE`）在 EL 切換時控制。RISC-V 規格同樣預留了 bi-endian 的可能性，但目前幾乎所有實作皆採用 Little Endian。
 
 ### 各語言的 Byte Swap API
 
@@ -130,7 +130,7 @@ Endianness 不只存在於執行時期，各種檔案格式也明確規定了 by
 | BMP   | Little Endian | Windows 原生格式                       |
 | PNG   | Big Endian    | 網路傳輸導向 [9]                        |
 | WAV   | Little Endian | PCM 音訊                               |
-| ELF   | 由 header 決定 | 第 5 個 byte：`0x01` = LE，`0x02` = BE [8] |
+| ELF   | 由 header 決定 | `e_ident[5]`（offset 5）：`0x01` = LE，`0x02` = BE [8] |
 | JPEG  | Big Endian    | EXIF 區塊例外，由 header 標記          |
 | Java Class File | Big Endian | JVM 統一使用 Big Endian           |
 
@@ -140,9 +140,21 @@ ELF 的做法是個好範例：在 header 裡明確標記自己的 endianness，
 
 不同系統所用的 Endianness 可能不相同，上面有提到這會影響到資料的解讀，以下舉幾個例子。
 
-1. 構建 buffer overflow payload
+1. 資料解讀錯誤
 
-在覆蓋 return address 時，要考慮到 CPU 架構所預設的 Endianness。
+假設系統 A（Big Endian）將日期 `2012 年 12 月` 編碼為 32-bit 整數 `0x20121200` 並寫入檔案，系統 B（Little Endian）直接讀取同一份檔案：
+
+```bash
+記憶體位址:  0x00   0x01   0x02   0x03
+寫入 (BE):  [0x20] [0x12] [0x12] [0x00]   → 0x20121200 (正確)
+讀取 (LE):  [0x20] [0x12] [0x12] [0x00]   → 0x00121220 (錯誤)
+```
+
+同樣的 byte sequence，Big Endian 解讀為 `0x20121200`（536,875,520），Little Endian 卻解讀為 `0x00121220`（1,184,288）——完全不同的數值。如果應用程式再從這個整數拆出年月，就會得到錯誤的日期。
+
+2. 構建 buffer overflow payload
+
+在覆蓋 return address 時，要考慮到 ISA 所預設的 Endianness。
 以 x86 為例，x86 採取 Little Endian，所以 return address 應該轉換。
 
 ```python
@@ -151,7 +163,7 @@ payload = b'\x12\x34\x56\x78'  # 錯誤
 payload = b'\x78\x56\x34\x12'  # 正確（Little Endian）
 ```
 
-2. 構建網路封包
+3. 構建網路封包
 
 網路封包採取 Big Endian，又被稱為 Network Byte Order [7]。
 
@@ -192,7 +204,7 @@ Bit-level endianness 描述的是一個 byte 內部，哪個 bit 是 MSB（Most 
 | ------------ | ------------ | ---------------------------------- |
 | Ethernet     | LSB first    | 每個 byte 從最低位先送出 [4]       |
 | USB          | LSB first    | [5]                                |
-| SPI          | 可設定       | CPOL/CPHA 決定，通常 MSB first     |
+| SPI          | 可設定       | 由 SPI 控制暫存器設定，通常 MSB first |
 | I²C          | MSB first    |                                    |
 | CAN bus      | MSB first    | [6]                                |
 
