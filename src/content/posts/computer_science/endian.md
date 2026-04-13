@@ -1,6 +1,6 @@
 ---
 title: Endianness 機制的探討
-published: 2026-03-29
+published: 2026-04-07
 description: "探討 Big Endian 與 Little Endian 的差異及其在實務上的影響"
 pinned: false
 tags: [endian, byte-order, network, memory]
