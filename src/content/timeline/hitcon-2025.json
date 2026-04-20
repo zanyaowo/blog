@@ -1,0 +1,9 @@
+{
+  "title": "參與 HITCON 2025",
+  "description": "參與台灣駭客年會 (HITCON 2025)，學習最新資安攻防技術、漏洞研究，並與資安專家進行交流。",
+  "type": "achievement",
+  "startDate": "2025-08-22",
+  "endDate": "2025-08-23",
+  "icon": "material-symbols:security",
+  "color": "#F97316"
+}
